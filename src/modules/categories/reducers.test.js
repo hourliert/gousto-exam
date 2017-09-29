@@ -1,7 +1,7 @@
 /**
  * This test is a perfect copy of ../products/reducer.test.js
- * If I had more time I would have use my own library https://github.com/redux-observable/redux-observable
- * that is an abstraction of basic reducers (and other things) like this one.
+ * If I had more time I would have use this library https://github.com/redux-observable/redux-observable
+ * that is an abstraction of crud reducers. This library is written by me an fully tested.
  */
 
 import categoriesReducer from './reducers';
@@ -14,7 +14,7 @@ function testReducer(testSet) {
   });
 }
 
-describe('categoriessReducer', () => {
+describe('categoriesReducer', () => {
   it('creates the categories reducer without initialState', () => {
     const newState = categoriesReducer(undefined);
     expect(newState).toBeDefined();
