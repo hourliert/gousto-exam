@@ -1,0 +1,9 @@
+.CategoryItem {
+  display: flex;
+  flex-grow: 1;
+}
+
+.CategoryItem-selected {
+  text-decoration: underline;
+  font-weight: bold;
+}

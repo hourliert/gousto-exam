@@ -1,2 +1,4 @@
 export { default as reducer } from './reducers';
-export { default as epic } from './epics';
+export { Categories } from './containers';
+export * from './actions';
+export * from './selectors';
