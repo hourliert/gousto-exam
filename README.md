@@ -38,4 +38,6 @@ Finally, the index file is bootstrapping everything (create redux store, initial
   * Eg. Products in a specific category
   * Cancel request that are not relevant (when switching categories)
 * Do the product search server-side
+* Unit tests reducers and selectors
+* e2e tests app behavior
 * Make the app beautiful, we are fetching product images, we should use them
