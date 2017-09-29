@@ -1,4 +1,4 @@
-# gousto-exam
+# gousto-exam [![Build Status](https://travis-ci.org/hourliert/gousto-exam.svg?branch=master)](https://travis-ci.org/hourliert/gousto-exam)
 
 ## Getting started
 
