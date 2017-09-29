@@ -38,7 +38,7 @@ describe('productsActions', () => {
     });
     const store = mockStore({});
 
-    const action = productsActions.getProducts();
+    const action = productsActions.fetchProducts();
 
     expect(action.type).toEqual('FETCH_PRODUCT');
     expect(action.payload).toBeInstanceOf(Promise);

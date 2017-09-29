@@ -4,14 +4,14 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Selector from './CategoriesSelector';
-import { getCategories, selectCategory } from '../actions';
+import { fetchCategories, selectCategory } from '../actions';
 import { CategoryItem, categoryShape } from '../components';
 
 import { List } from '../../shared';
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    getCategories,
+    fetchCategories,
     selectCategory
   }, dispatch);
 }
@@ -22,11 +22,11 @@ class Categories extends PureComponent {
     selectedCategory: categoryShape,
 
     selectCategory: PropTypes.func,
-    getCategories: PropTypes.func,
+    fetchCategories: PropTypes.func,
   };
 
   componentWillMount() {
-    this.props.getCategories();
+    this.props.fetchCategories();
   }
 
   render() {

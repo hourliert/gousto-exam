@@ -4,14 +4,14 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Selector from './ProductsSelector';
-import { getProducts, selectProduct } from '../actions';
+import { fetchProducts, selectProduct } from '../actions';
 import { ProductItem, SearchProductForm, productShape } from '../components';
 
 import { List } from '../../shared';
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    getProducts,
+    fetchProducts,
     selectProduct,
   }, dispatch);
 }
@@ -22,7 +22,7 @@ class Products extends PureComponent {
     products: PropTypes.arrayOf(productShape),
 
     selectProduct: PropTypes.func,
-    getProducts: PropTypes.func,
+    fetchProducts: PropTypes.func,
   };
 
   constructor(...args) {
@@ -32,7 +32,7 @@ class Products extends PureComponent {
   }
 
   componentWillMount() {
-    this.props.getProducts();
+    this.props.fetchProducts();
   }
 
   /**

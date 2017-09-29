@@ -44,7 +44,7 @@ describe('categoriesActions', () => {
     });
     const store = mockStore({});
 
-    const action = categoriesActions.getCategories();
+    const action = categoriesActions.fetchCategories();
 
     expect(action.type).toEqual('FETCH_CATEGORY');
     expect(action.payload).toBeInstanceOf(Promise);
