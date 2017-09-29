@@ -35,19 +35,26 @@ class Products extends PureComponent {
     this.props.getProducts();
   }
 
-  _searchProducts(form) {
-    console.log(form.toJS());
-  }
+  /**
+   * We don't need to use this callback. Search is done in ../selectors.js
+   *
+   * This would have been useful if search was made on the backend side
+   */
+  _searchProducts() {}
 
   render() {
     const { selectedProduct, products } = this.props;
 
     return (
       <div>
-        <SearchProductForm
-          onSubmit={this._searchProducts}
-        />
         <List
+          title="Products"
+          header={
+            <SearchProductForm
+              label="Search for a product"
+              onSubmit={this._searchProducts}
+            />
+          }
           layout="vertical"
           items={products}
           activeItem={selectedProduct}

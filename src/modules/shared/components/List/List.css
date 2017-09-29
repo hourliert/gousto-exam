@@ -1,11 +1,14 @@
 .List {
+  width: 100%;
+}
+
+.List-header {
 
 }
 
 .List-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: space-around;
-  align-items: center;
   align-content: center;
 }

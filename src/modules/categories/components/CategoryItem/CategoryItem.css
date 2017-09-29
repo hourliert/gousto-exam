@@ -1,6 +1,9 @@
 .CategoryItem {
-  display: flex;
-  flex-grow: 1;
+  width: 100px;
+  height: 50px;
+  margin: auto;
+  cursor: pointer;
+  text-align: center;
 }
 
 .CategoryItem-selected {

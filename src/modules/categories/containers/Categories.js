@@ -34,6 +34,7 @@ class Categories extends PureComponent {
 
     return (
       <List
+        title="Categories"
         layout="horizontal"
         items={categories}
         activeItem={selectedCategory}

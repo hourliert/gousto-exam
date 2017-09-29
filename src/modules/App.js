@@ -8,8 +8,11 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div>
-        <h2>Store</h2>
+      <div className="App">
+        <div className="App-header">
+          <h1>Store</h1>
+        </div>
+
         <Categories />
         <Products />
       </div>

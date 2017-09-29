@@ -4,9 +4,17 @@ import { reduxForm, Field } from 'redux-form/immutable';
 
 import { SEARCH_PRODUCTS, SEARCH_PRODUCTS_FIELDS } from '../../forms';
 
+import './SearchProductForm.css';
+
 class SearchProductForm extends PureComponent {
   static propTypes = {
+    label: PropTypes.string,
+
     handleSubmit: PropTypes.func,
+  };
+
+  static defaultProps = {
+    label: 'Search',
   };
 
   constructor(...args) {
@@ -25,19 +33,18 @@ class SearchProductForm extends PureComponent {
   }
 
   render() {
-    const { handleSubmit } = this.props;
+    const { label, handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="search">Search</label>
-          <Field
-            name={SEARCH_PRODUCTS_FIELDS.search}
-            component="input"
-            type="text"
-            onChange={this._submitSearch}
-          />
-        </div>
+      <form className="SearchProductForm" onSubmit={handleSubmit}>
+        <label className="SearchProductForm-label" htmlFor="search">{label}</label>
+        <Field
+          className="SearchProductForm-field"
+          name={SEARCH_PRODUCTS_FIELDS.search}
+          component="input"
+          type="text"
+          onChange={this._submitSearch}
+        />
       </form>
     );
   }

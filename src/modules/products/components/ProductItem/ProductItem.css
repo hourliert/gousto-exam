@@ -1,6 +1,9 @@
 .ProductItem {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  cursor: pointer;
 }
-
 
 .ProductItem-selected > .ProductItem-title {
   font-weight: bold;
