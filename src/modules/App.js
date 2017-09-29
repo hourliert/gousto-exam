@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { Categories } from './categories';
+import { Products } from './products';
 
 import './App.css';
 
@@ -10,6 +11,7 @@ class App extends Component {
       <div>
         <h2>Store</h2>
         <Categories />
+        <Products />
       </div>
     );
   }

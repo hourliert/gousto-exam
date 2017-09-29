@@ -1,0 +1,7 @@
+.ProductItem {
+}
+
+
+.ProductItem-selected > .ProductItem-title {
+  font-weight: bold;
+}

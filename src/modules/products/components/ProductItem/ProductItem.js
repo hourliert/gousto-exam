@@ -2,18 +2,21 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import { categoryShape } from '../../../categories';
 import { noop } from '../../../shared';
 
-import './CategoryItem.css';
+import './ProductItem.css';
 
-export const categoryShape = PropTypes.shape({
+export const productShape = PropTypes.shape({
+  categories: PropTypes.arrayOf(categoryShape),
+  description: PropTypes.string,
   id: PropTypes.string,
   title: PropTypes.string,
 });
 
-export default class CategoryItem extends PureComponent {
+export default class ProductItem extends PureComponent {
   static propTypes = {
-    item: categoryShape,
+    item: productShape,
     isActive: PropTypes.bool,
     style: PropTypes.object,
 
@@ -31,10 +34,10 @@ export default class CategoryItem extends PureComponent {
   constructor(...args) {
     super(...args);
 
-    this._onSelectCategory = this._onSelectCategory.bind(this);
+    this._onSelectProduct = this._onSelectProduct.bind(this);
   }
 
-  _onSelectCategory() {
+  _onSelectProduct() {
     this.props.onSelectItem(this.props.item);
   }
 
@@ -51,10 +54,14 @@ export default class CategoryItem extends PureComponent {
     return (
       <div
         style={this._computeStyle()}
-        className={classNames('CategoryItem', isActive ? 'CategoryItem-selected' : '')}
-        onClick={this._onSelectCategory}
+        className={classNames('ProductItem', isActive ? 'ProductItem-selected' : '')}
+        onClick={this._onSelectProduct}
       >
-        {item.title}
+        <p className="ProductItem-title">{item.title}</p>
+        { isActive ?
+          <p className="ProductItem-description">{item.description}</p> :
+          null
+        }
       </div>
     );
   }
