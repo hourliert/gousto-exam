@@ -15,7 +15,7 @@ function getInitialState() {
 
 export default reducerFactory(getInitialState(), {
   [`${FETCH}_${PRODUCT}_${FULFILLED}`](state, action) {
-    const { data } = action.payload.data;
+    const { data } = action.payload;
 
     return state.mergeIn(['value'], formatApiEntities(data));
   },

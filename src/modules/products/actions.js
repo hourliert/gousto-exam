@@ -7,7 +7,8 @@ import { FETCH } from '../shared';
 export const PRODUCT = 'PRODUCT';
 
 function fetchProducts() {
-  return axios.get(API_PRODUCTS_ROUTE);
+  return axios.get(API_PRODUCTS_ROUTE)
+    .then(r => r.data);
 }
 
 export const getProducts = actionsCreatorFactory(

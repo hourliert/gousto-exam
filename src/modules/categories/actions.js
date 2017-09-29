@@ -7,7 +7,8 @@ import { FETCH } from '../shared';
 export const CATEGORY = 'CATEGORY';
 
 function fetchCategories() {
-  return axios.get(API_CATEGORIES_ROUTE);
+  return axios.get(API_CATEGORIES_ROUTE)
+    .then(r => r.data);
 }
 
 export const getCategories = actionsCreatorFactory(
