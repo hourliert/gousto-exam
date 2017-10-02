@@ -3,3 +3,4 @@ export { Products } from './containers';
 export * from './actions';
 export * from './selectors';
 export * from './forms';
+export * from './components';
