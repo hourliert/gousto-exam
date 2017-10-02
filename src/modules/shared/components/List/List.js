@@ -59,7 +59,7 @@ export default class List extends PureComponent {
         {header}
 
         <div className="List-container" style={this._computeContainerStyle()}>
-          {items.length === 0 ? <div>No item</div> : null}
+          {items.length === 0 ? <div className="List-empty">No item</div> : null}
           {items.map((i, key) => (
             React.cloneElement(itemRenderer, {
               key,
