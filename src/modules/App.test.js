@@ -5,7 +5,6 @@ import Adapter from 'enzyme-adapter-react-16';
 import moxios from 'moxios';
 
 import App from './App';
-import { CategoryItem } from './categories';
 
 import configureStore from '../configureStore';
 import { API_PRODUCTS_ROUTE, API_CATEGORIES_ROUTE } from '../config';
@@ -55,23 +54,15 @@ describe('App behavior', () => {
   it('should render the app with some stub data', (done) => {
     const wrapper = mount(renderApp());
 
-    setTimeout(() => {
+    moxios.wait(() => {
+      wrapper.update();
+
       expect(wrapper.text().includes('Sprout')).toBe(true);
       expect(wrapper.text().includes('Coca')).toBe(true);
       expect(wrapper.text().includes('Orangina')).toBe(true);
       expect(wrapper.text().includes('Vegies')).toBe(true);
       expect(wrapper.text().includes('Drinks')).toBe(true);
       done();
-    }, 0);
-  });
-
-  it('should select a categories and filter products', (done) => {
-    const wrapper = mount(renderApp());
-
-    setTimeout(() => {
-      console.log(wrapper.find('.CategoryItem'));
-
-      done();
-    }, 0);
+    });
   });
 });
